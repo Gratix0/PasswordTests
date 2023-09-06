@@ -6,82 +6,76 @@ namespace PasswordTests
     [TestClass]
     public class PasswordTests
     {
-        int allPoints;
+        
         [TestMethod]
-        public void TestNumberInPass_True_1Pointreturn()
+        public void TestingPass_Password_5()
         {
             // Arrage
-            string a = "a2"; int expected = 1;
+            string a = "1Aa!Patr"; int expected = 5;
             // Act
             Password.Password password = new Password.Password();
-            int actual = password.NumberPassword(a);
+            int actual = password.TestingPassword(a);
             //Assert
             Assert.AreEqual(expected, actual);
-            allPoints += actual;
-        }
+        }     
+        
         [TestMethod]
-        public void TestStrokeSimbInPass_True_1Pointreturn()
+        public void TestingPass_Password_4()
         {
             // Arrage
-            string a = "a2As"; int expected = 1;
+            string a = "1Aagatr"; int expected = 4;
             // Act
             Password.Password password = new Password.Password();
-            int actual = password.StrokeSimbInThePass(a);
+            int actual = password.TestingPassword(a);
             //Assert
             Assert.AreEqual(expected, actual);
-            allPoints += actual;
         }
+        [TestMethod]
+        public void TestingPass_Password_3()
+        {
+            // Arrage
+            string a = "1agatrr"; int expected = 3;
+            // Act
+            Password.Password password = new Password.Password();
+            int actual = password.TestingPassword(a);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestingPass_Password_2()
+        {
+            // Arrage
+            string a = "1agatr"; int expected = 2;
+            // Act
+            Password.Password password = new Password.Password();
+            int actual = password.TestingPassword(a);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestingPass_Password_1()
+        {
+            // Arrage
+            string a = "aa"; int expected = 1;
+            // Act
+            Password.Password password = new Password.Password();
+            int actual = password.TestingPassword(a);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }     
+        [TestMethod]
+        public void TestingPass_Password_0()
+        {
+            // Arrage
+            string a = ""; int expected = 0;
+            // Act
+            Password.Password password = new Password.Password();
+            int actual = password.TestingPassword(a);
+            //Assert
+            
+            Assert.AreEqual(expected, actual);
+        }     
 
-        [TestMethod]
-        public void TestUpperSimbInPass_True_1Pointreturn()
-        {
-            // Arrage
-            string a = "a2As"; int expected = 1;
-            // Act
-            Password.Password password = new Password.Password();
-            int actual = password.UpperCaseSimbInThePass(a);
-            //Assert
-            Assert.AreEqual(expected, actual);
-            allPoints += actual;
-        }
-
-        [TestMethod]
-        public void SpecSimbInPass_True_1Pointreturn()
-        {
-            // Arrage
-            string a = "a2A^./s"; int expected = 1;
-            // Act
-            Password.Password password = new Password.Password();
-            int actual = password.SpecSimbInThePass(a);
-            //Assert
-            Assert.AreEqual(expected, actual);
-            allPoints += actual;
-        }
-        [TestMethod]
-        public void SevenSimbInPass_True_1Pointreturn()
-        {
-            // Arrage
-            string a = "a2Aae./"; int expected = 1;
-            // Act
-            Password.Password password = new Password.Password();
-            int actual = password.SevenSimbInThePass(a);
-            //Assert
-            Assert.AreEqual(expected, actual);
-            allPoints += actual;
-        }
-
-        [TestMethod]
-        public void NalichiePass_True_1Pointreturn()
-        {
-            // Arrage
-            string a = "1"; int expected = 1;
-            // Act
-            Password.Password password = new Password.Password();
-            int actual = password.NalichiePass(a);
-            //Assert
-            Assert.AreEqual(expected, actual);
-            allPoints += actual;
-        }
 
     }
 }
